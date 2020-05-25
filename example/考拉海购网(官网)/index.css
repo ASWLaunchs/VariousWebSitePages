@@ -1,0 +1,1189 @@
+body {
+    /* 将body默认的padding和margin清零，有助于页面无白边，实现全屏阅读 */
+    padding: 0;
+    margin: 0;
+    /* 这是字体大小及字体风格 */
+    font: 12px/1.5 Helvetica Neue, Helvetica, Arial, Hiragino Sans GB, \5FAE\8F6F\96C5\9ED1, tahoma, simsun, \5b8b\4f53;
+    font-weight: 500;
+    overflow-x: hidden;
+}
+
+a {
+    /* 这是一个设置超链接的下划线为空的办法，text-decoration让文本修饰为none，就可以将下划线去掉 */
+    text-decoration: none;
+}
+
+
+/* ---------------顶部导航栏部分---------------------*/
+/* 设置外层包裹标签，方便实现导航条居中 */
+#topNav {
+    display: block;
+    margin: 0 auto;
+}
+
+/* 设置导航栏父级的效果 */
+ul.Nav {
+    /* 设置导航栏类名为Nav的ul列表的定位为相对定位 */
+    position: relative;
+    /* 根据官方网页参考可得，大致的导航栏高度为31px */
+    height: 31px;
+    /* 设置为100%，让导航栏的ul列表适应屏幕宽度 */
+    width: 100%;
+    /* 距离顶部为0像素，使导航栏相对浏览器可视页面置顶，紧贴浏览器可视页面顶部 */
+    margin-top: 0px;
+    /* 前端的规范中，ul默认相对左边有40像素的距离，margin-left属性设置为-40像素表示相对于左边向左方向移动40像素的距离 */
+    margin-left: -40px;
+    /* 根据官网的导航栏背景颜色可知，背景颜色为黑色 */
+    background-color: black;
+    /* 设置字体颜色为灰度，16进制表示为999999，这里缩写为999 */
+    color: #999;
+    z-index: 999999;
+}
+
+/* 对导航栏子级进行设置 */
+ul.Nav li {
+    /* 将li标签的显示设置为行级块模式，这样会让li标签从垂直排列变为水平排列 */
+    display: inline-block;
+    position: relative;
+    /* 行高设置为和父级一样的行高，用于撑开li的高度 */
+    line-height: 31px;
+    /* 根据官网的导航栏效果可知，li内的字体相对于border边框有一定的距离，所以我们设置内填充，上下因为有行高了，这里就设置左右内填充12像素 */
+    padding: 0 12px 0;
+    cursor: pointer;
+}
+
+
+/* 当鼠标移动到导航栏的li标签上时会发生字体变白色的效果 */
+ul.Nav li:hover {
+    color: #fff;
+}
+
+
+/* 这里采用nth-child()选择器来设置每个选项之间的间距 */
+/* 主要设置第一个选项和第四个选项 ，这样一左一右的设置可以使第一到第4选项分离成左侧的导航栏*/
+ul.Nav li:nth-child(1) {
+    margin-left: 200px;
+}
+
+ul.Nav li:nth-child(4) {
+    margin-right: 140px;
+}
+
+/* 这个地方是将i标签用css画成三角形，做倒三角字符 */
+ul.Nav li i {
+    position: relative;
+    top: 10px;
+    margin-left: 4px;
+    width: 0;
+    height: 0;
+    border: 4px solid #999;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    /* 加入动画过渡属性 */
+    transition: all 0.2s ease;
+}
+
+/* 当鼠标经过导航栏的li标签选项时，i标签发生的变化，这是下坠的动画效果 */
+ul.Nav li:hover i {
+    top: 16px;
+}
+
+/* 对个人中心，客服服务，支付中心，消费者权益，更多  这5个二级下拉菜单进行设置 */
+.personalCenter,
+.customerService,
+.payCenter,
+.consumesInterests,
+.more {
+    display: none;
+    position: absolute;
+    margin-left: -12px;
+    width: 100px;
+    background-color: rgb(253, 253, 253);
+    box-shadow: 1px 1px 15px rgb(228, 228, 228);
+    padding: 0 10px 0 10px;
+}
+
+.customerService {
+    width: 90px;
+}
+
+.payCenter {
+    width: 64px;
+}
+
+.consumesInterests {
+    width: 76px;
+}
+
+.more {
+    width: 74px;
+    left: -18px;
+    padding: 0 8px 0 8px;
+}
+
+/* 对个人中心，客服服务，支付中心，更多  这4个二级下拉菜单的菜单选项进行设置，这里我们用a标签作为单个菜单选项的包裹标签 */
+.personalCenter a,
+.customerService a,
+.payCenter a,
+.more a {
+    display: block;
+    width: 100%;
+    color: inherit;
+}
+
+/* 给二级下拉菜单里面的指定选项设置下划线 */
+.more a:nth-child(1) {
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.personalCenter a:nth-child(3) {
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.personalCenter a:nth-child(6) {
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.personalCenter a:nth-child(8) {
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+/* 类名.Nav中的第7到第11的li元素是拥有下拉二级菜单栏，鼠标经过li标签的时候，背景变为白色,字体颜色变黑色*/
+ul.Nav li:nth-child(7):hover,
+ul.Nav li:nth-child(8):hover,
+ul.Nav li:nth-child(9):hover,
+ul.Nav li:nth-child(10):hover,
+ul.Nav li:nth-child(11):hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(253, 253, 253);
+}
+
+/* 类名.Nav中的第7到第11的li元素是拥有下拉二级菜单栏，鼠标经过a标签的时候，字体颜色变红色 */
+ul.Nav li:nth-child(7) a:hover,
+ul.Nav li:nth-child(8) a:hover,
+ul.Nav li:nth-child(9) a:hover,
+ul.Nav li:nth-child(10) a:hover,
+ul.Nav li:nth-child(11) a:hover {
+    color: rgb(240, 15, 15);
+}
+
+/* 类名.Nav中的第7到第11的li元素是拥有下拉二级菜单栏，鼠标经过时显示相应的二级下拉菜单栏 */
+ul.Nav li:nth-child(7):hover .personalCenter,
+ul.Nav li:nth-child(8):hover .customerService,
+ul.Nav li:nth-child(9):hover .payCenter,
+ul.Nav li:nth-child(10):hover .consumesInterests,
+ul.Nav li:nth-child(11):hover .more {
+    display: block;
+    color: rgb(0, 0, 0);
+}
+
+
+
+/* ---------------搜索框那一栏---------------------*/
+.container {
+    position: relative;
+    width: 1090px;
+    height: 2660px;
+    margin: 0 auto;
+}
+
+/* 搜索框整体 */
+.searchBar {
+    width: 1090px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: -12px;
+}
+
+/* 左边的logo图案，是一个超链接 */
+.searchBar a {
+    display: block;
+
+}
+
+/* 设置左边logo图案 */
+.searchBar a img {
+    float: left;
+    width: 210px;
+    height: 68px;
+    cursor: pointer;
+    margin-top: 20px;
+    z-index: 9;
+}
+
+/* 搜索输入框部分 */
+.searchText {
+    float: right;
+    width: 510px;
+    height: 36px;
+    padding-left: 1px;
+    margin-top: 28px;
+    margin-right: 62px;
+    background-color: #ffffff;
+    border: 2px solid #ff2337;
+    border-radius: 40px;
+}
+
+/* 输入框样式设置 */
+.searchText input[type="text"] {
+    display: block;
+    width: 80%;
+    margin-top: 9px;
+    margin-left: 36px;
+    border: 0px;
+}
+
+/* 输入框的提示字段字体样式，这里设置为italic，表示斜体 */
+.searchText input[type="text"]::placeholder {
+    font-style: italic;
+}
+
+/* 当时点击输入框时，输入框默认的外边框会别隐藏 */
+.searchText input[type="text"]:focus {
+    outline: none;
+}
+
+/* 购物车 */
+.shopCar {
+    display: block;
+    float: right;
+    width: 106px;
+    height: 36px;
+    margin-top: 28px;
+    margin-right: 75px;
+    line-height: 36px;
+    border: 2px solid #ff1e32;
+    border-radius: 36px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* 当鼠标移动到购物车标签上时，购物车标签的字体颜色和底色的变化 */
+.shopCar:hover {
+    color: #ff1e32;
+    background-color: #fff4f5;
+}
+
+/* 购物车icon图标 */
+.shopIcon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 2px;
+    margin-bottom: -5px;
+    background: url(./购物车.png) no-repeat 0 0;
+}
+
+
+.searchText img {
+    transform: scale(0.5);
+    border: 1px solid;
+    margin-top: -4px;
+    background-color: rgb(214, 214, 214);
+}
+
+/* 设置输入框左边的那个小放大镜，这里有个细节 */
+/* all_Icon.png实际是一个很大的雪碧图，我们这里使用css3的背景定位，设置要裁剪的区域为-466px,-677px这个位置 */
+.searchText .zoomIcon {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    margin-left: 10px;
+    margin-top: 11px;
+    background-position: -466px -667px;
+    background-image: url('./all_Icon.png');
+    border: 1px;
+}
+
+/* 搜索按钮 */
+.searchButton {
+    display: block;
+    float: right;
+    width: 56px;
+    height: 38px;
+    margin-right: -4px;
+    margin-top: -29px;
+    background-color: #ff2337;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* 搜索按钮的放大镜图标 */
+.searchButton i {
+    display: block;
+    width: 56px;
+    height: 38px;
+    margin-right: -4px;
+    margin-top: 0px;
+    background-image: url('./放大镜大.png');
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 30px;
+}
+
+/* 当鼠标移动到搜索按钮上时会发生的变化 */
+.searchButton:hover {
+    background: linear-gradient(270deg, #f85a7d, #ff3234);
+}
+
+
+/*------------------分类导航栏部分--------------- */
+/* classificationNav是classification+Nav，意思是分类导航 */
+.classificationNav {
+    position: relative;
+    width: 1090px;
+    z-index: 9999;
+}
+
+/* 给分类导航栏的水平导航栏设置相关属性 */
+.classificationNav ul.horizontal {
+    width: 100%;
+    height: 40px;
+}
+
+/* 对分类导航栏的水平导航栏选项进行行级块元素设置 */
+.classificationNav ul.horizontal li {
+    display: inline-block;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bolder;
+    line-height: 40px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* 当鼠标经过导航栏里面的字体的时候，字体颜色变为红色，鼠标指针的图标变成小手 */
+.classificationNav ul.horizontal li a:hover {
+    color: red;
+    cursor: pointer;
+}
+
+/* 对全部分类选项进行设置 */
+.classificationNav .allClass {
+    display: block;
+    float: left;
+    height: 40px;
+    position: relative;
+    line-height: 40px;
+    width: 164px;
+    text-align: center;
+    font-size: 14px;
+    margin-right: 30px;
+    color: #fff;
+    background-color: red;
+    border-bottom: 1px solid #ff5160;
+    cursor: pointer;
+}
+
+/* 对全部分类的标签头部三杠图标进行设置 */
+.classificationNav .allClass span i {
+    display: block;
+    width: 15px;
+    border-top: 2px solid #ddd;
+    height: 0px;
+    margin-bottom: 3px;
+}
+
+.classificationNav .allClass span:nth-child(1) {
+    float: left;
+    margin-top: 14px;
+    margin-left: 18px;
+    margin-bottom: 3px;
+}
+
+.classificationNav .allClass span:nth-child(2) {
+    margin-left: -30px;
+    margin-bottom: 3px;
+}
+
+.classificationNav .allClass ul.vertical {
+    display: none;
+    margin-left: -40px;
+    margin-top: 0px;
+}
+
+/* 当鼠标移动到全部分类的标签上时，垂直导航栏将会显示 */
+.classificationNav .allClass:hover ul.vertical {
+    display: block;
+}
+
+/* 这是一个细节，对垂直导航栏的第一个li的顶部有红色边线 */
+.classificationNav .allClass ul.vertical>li:first-child {
+    border-top: 1px solid #ff5160;
+}
+
+.classificationNav .allClass ul.vertical>li {
+    width: 160px;
+    height: 40px;
+    list-style: none;
+    border-left: 1px solid #ff1e32;
+    border-right: 3px solid #ff1e32;
+    border-bottom: 1px solid #ff626f;
+    background: linear-gradient(90deg, red, #ff3264);
+}
+
+/* 这是一个细节，对垂直导航栏的最后一个li的顶部有白色边线 */
+.classificationNav .allClass ul.vertical>li:last-child {
+    border-bottom: 1px solid #fff;
+}
+
+.classificationNav .allClass ul.vertical>li:hover {
+    color: #ff1e32;
+    background: #fff;
+}
+
+.classificationNav .allClass ul.vertical>li .icon {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 16px;
+    width: 20px;
+    height: 20px;
+    margin-left: -28px;
+}
+
+.classificationNav .allClass ul.vertical>li span {
+    display: inline-block;
+    vertical-align: middle;
+    width: 70px;
+    line-height: 16px;
+    margin-left: 12px;
+    white-space: nowrap;
+}
+
+/* 鼠标移动到垂直标签上面的时候，右侧内容会出现 */
+.classificationNav .allClass ul.vertical>li:nth-child:hover>.context {
+    display: block;
+}
+
+/* 文本内的内容 */
+.context {
+    display: block;
+    position: absolute;
+    width: 930px;
+    height: 450px;
+    margin-top: -41px;
+    margin-left: 162px;
+    color: black;
+    background-color: rgb(241, 241, 241);
+    border: 1px solid #ff1e32;
+    cursor: default;
+}
+
+/* 文本左边区域 */
+.context .leftContext {
+    width: 74%;
+    height: 450px;
+    background-color: rgb(255, 255, 255);
+}
+
+.context .leftContext ul {
+    float: left;
+    width: 44%;
+    height: 46%;
+    margin-left: -20px;
+    margin-bottom: 16px;
+    border-width: 0px;
+}
+
+
+.context .leftContext ul:nth-of-type(even) {
+    margin-left: -41px;
+}
+
+
+.context .leftContext ul li {
+    float: left;
+    list-style: none;
+    font-size: 13px;
+    margin-left: 20px;
+}
+
+.context .leftContext ul li a {
+    color: black;
+}
+
+.context .leftContext ul li:first-child {
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 这是一个细节，当鼠标移动到超链接上的时候，出现下划线 */
+.context .leftContext ul li:hover a {
+    text-decoration: underline;
+}
+
+/* 文本右边区域 */
+.context .rightContext {
+    position: absolute;
+    width: 32%;
+    height: 440px;
+    top: 22px;
+    right: -24px;
+}
+
+.context .rightContext ul {
+    width: 100%;
+    height: 46%;
+    border-width: 0px;
+}
+
+.context .rightContext ul li {
+    float: left;
+    list-style: none;
+    font-size: 13px;
+    margin-left: 1px;
+    margin-top: -14px;
+}
+
+.context .rightContext ul li>img {
+    width: 108px;
+    height: 108px;
+    border: 1px solid #eaeaea;
+    margin: 0 3px 2px 0;
+    cursor: pointer;
+}
+
+/* 右侧区域底部广告样式设定 */
+.context .rightContext ul img.ad {
+    position: absolute;
+    width: 220px;
+    bottom: 22px;
+    left: 42px;
+}
+
+
+
+/* -------------轮播图------------ */
+/* 轮播图父级 */
+.RotationChart {
+    position: relative;
+    width: 1964px;
+    height: 400px;
+    margin-left: -400px;
+}
+
+/* 对轮播图图片样式进行设计，并定位在一起，方便后期轮播图显示消失的特效设置 */
+.RotationChart img {
+    position: absolute;
+    opacity: 0;
+    /* 动画过渡效果 */
+    transition: all 0.4s ease;
+}
+
+/* 设置左右两边的轮播图播放前进后退按钮 */
+.RotationChart span {
+    /* 因为父级RotationChart已经进行相对定位，这里采用绝对定位，方便让轮播图的子组件脱离文档流，进行调整组件位置的操作 */
+    position: absolute;
+    display: block;
+    top: 150px;
+    left: 210px;
+    width: 30px;
+    height: 70px;
+    color: rgb(243, 240, 240);
+    font-size: 36px;
+    line-height: 70px;
+    text-align: center;
+    background-color: rgba(51, 51, 51, 0.84);
+    /* 让按钮堆叠顺序等级提升到666级，这样轮播图及其他组件就不会挡住用户按按钮的操作 */
+    z-index: 666;
+    cursor: pointer;
+}
+
+.RotationChart span:nth-child(2) {
+    top: 150px;
+    left: 1645px;
+}
+
+/* 底部序列条 */
+.bottomList {
+    position: absolute;
+    width: 138px;
+    height: 28px;
+    top: 340px;
+    left: 850px;
+    border-radius: 25px;
+    background-color: rgba(112, 128, 144, 0.6);
+}
+
+
+.bottomList ul {
+    margin-left: -40px;
+    margin-top: 6px;
+}
+
+/* 对序列条的5个小圆点进行设置，块级元素变圆的秘诀就是通过对border-radius进行设置 */
+.bottomList li {
+    display: inline-block;
+    margin-right: 10px;
+    width: 9px;
+    height: 9px;
+    border-radius: 25px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+
+.bottomList li:first-child {
+    margin-left: 22px;
+}
+
+
+/* -------------------------商品展示栏-------------------------- */
+.goodsDisplay {
+    width: 1090px;
+    height: 800px;
+    background-color: rgb(255, 255, 255);
+}
+
+/* 商品承诺 */
+.promise {
+    position: relative;
+    width: 992px;
+    height: 90px;
+    background-color: red;
+    padding: 4px;
+    margin-bottom: 10px;
+}
+
+/* 官方商品防假承诺文本 */
+.promise .promiseText {
+    position: absolute;
+    width: 99%;
+    height: 90px;
+    background-color: #fff;
+    border-radius: 6.4px;
+}
+
+.promiseText p {
+    position: absolute;
+    display: block;
+    top: -10px;
+    left: 18px;
+    font-size: 20px;
+    font-weight: 600;
+    color: red;
+    height: 24px;
+    width: 400px;
+}
+
+.promiseText .rightSpan {
+    position: absolute;
+    width: 176px;
+    height: 20px;
+    top: 24px;
+    right: 18px;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    border-radius: 24px;
+    background-color: red;
+}
+
+.promiseText img {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+}
+
+.shopTitle {
+    width: 1000px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 28px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(227, 20, 54);
+    margin-top: 6px;
+    margin-bottom: 12px;
+}
+
+/* 头号商品的设置，这里的头号商品指的是商品栏上面那4个图案，被指定的横向图案 */
+.topTitleImg .aHref {
+    display: flex;
+    width: 986px;
+    margin-top: -302px;
+}
+
+/* 用flex属性平均分配超链接，浮动在头号的4个商品上，方便点击跳转 */
+.topTitleImg .aHref a {
+    display: block;
+    flex: 1;
+    height: 296px;
+    margin-left: 14px;
+}
+
+/* 针对第一个头号商品进行单独设置，为了方便整个头号商品居中 */
+.topTitleImg .aHref a:first-child {
+    margin-left: 10px;
+}
+
+
+/* 商品列表 */
+.goodsList {
+    position: relative;
+    width: 1000px;
+    height: 1536px;
+    margin-top: -12px;
+    background-color: rgb(240, 240, 240);
+}
+
+.goodsList ul {
+    margin-left: -40px;
+}
+
+.goodsList ul li {
+    display: block;
+    float: left;
+    position: relative;
+    height: 279px;
+    width: 190px;
+    background-color: #fff;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    margin-left: 8px;
+}
+
+/* 对单个商品进行指定 */
+.goodsList ul li .goods {
+    height: 296px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    background-color: inherit;
+    transition: all 0.2s ease;
+}
+
+/* 单个商品左上角的红色小标签 */
+.goodsList ul li .leftTop {
+    display: block;
+    position: absolute;
+    top: 0;
+    margin-top: 1px;
+    margin-left: -1px;
+    width: fit-content;
+    height: 20px;
+    padding: 0 5px 0 3px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 20px;
+    background-color: #ff8385;
+    z-index: 1;
+}
+
+/* 单个商品左下角的小标签 */
+.goodsList ul li .leftBottom {
+    display: block;
+    position: absolute;
+    height: 15px;
+    left: 8px;
+    border: 1px solid #e31436;
+    border-radius: 3px;
+    background: #fff;
+    color: #e31436;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+/* 商品名字 */
+.goodsList ul li h3 {
+    display: block;
+    height: auto;
+    width: 180px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-top: 4px;
+    margin-left: 4px;
+    overflow: hidden;
+}
+
+/* 鼠标移动到商品栏后，相应的商品显示商品名字，这里用的是white-space属性让标题全部显示 */
+.goodsList ul li:hover .goods {
+    height: 338px;
+    border: 1px solid red;
+    white-space: normal;
+}
+
+.goodsList ul li:hover p {
+    white-space: normal;
+}
+
+.goodsList ul li h3:hover p {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.goodsList ul li img {
+    width: 100%;
+}
+
+/* 单个的商品描述文字 */
+.goodsList ul li .describe {
+    color: #666;
+    margin-left: 4px;
+    margin-top: -24px;
+}
+
+/* 单个商品的价格，采用大红色显示 */
+.goodsList ul li .value {
+    position: relative;
+    color: rgb(227, 20, 54);
+    background-color: #fff;
+    line-height: 22px;
+    margin-bottom: 14px;
+    z-index: 9999;
+}
+
+.goodsList ul li .value a {
+    display: block;
+    float: right;
+    width: fit-content;
+    height: 24px;
+    margin-right: 4px;
+    bottom: 14px;
+    padding: 0 6px;
+    border-radius: 3px;
+    background: #e31436;
+    color: #fff;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+}
+
+/* 商品原价格，这是文字划线，一般用于打折吸引客服 */
+.goodsList ul li .value del {
+    color: #999;
+}
+
+/* ----------右侧导航栏------------- */
+ul.rightNav {
+    position: fixed;
+    right: 60px;
+    top: 30vh;
+    width: 128px;
+    z-index: 9999;
+}
+
+/* 右侧导航栏的li属性设置 */
+ul.rightNav li {
+    display: block;
+    list-style: none;
+    width: 100px;
+    line-height: 30px;
+    height: 30px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    background-color: #f03048;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 100px;
+}
+
+/* 单鼠标移动到右侧导航栏的指定 li 上时，底色显示为暗红色 */
+ul.rightNav li:hover {
+    background-color: rgb(175, 36, 52);
+}
+
+/* 右侧导航条的第一个li是购物车 */
+#oneCar {
+    display: block;
+    float: left;
+    margin-left: 18px;
+    margin-top: 5px;
+    width: 20px;
+    height: 20px;
+    background-size: 20px 21px;
+    background-image: url('./购物车_1.png');
+}
+
+/* 购物车 */
+#oneCar+span {
+    margin-left: -20px;
+}
+
+/* 右侧导航栏最后一个li是上箭头 */
+#oneUp {
+    display: block;
+    margin-left: 40px;
+    margin-top: 0px;
+    width: 20px;
+    height: 16px;
+    background-size: 20px 21px;
+    background-image: url('./上箭头.png');
+}
+
+#oneUp+span {
+    display: block;
+    line-height: 16px;
+}
+
+
+
+/* -------------------底部信息----------------- */
+/* 底部信息正品承诺的父级，进行宽度和高度进行定型 */
+.provide {
+    width: 1100px;
+    height: 100px;
+    border-bottom: 1px solid #ddd;
+    margin-left: 170px;
+}
+
+/* 正低退邮 */
+.zdty {
+    width: 1100px;
+    height: 100px;
+    margin-top: 50px;
+    margin-left: -80px;
+}
+
+/* 对正低退邮4个li进行设置 */
+.zdty li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 84px;
+}
+
+/* 正低退邮 4个 字的外圈包裹为圆 */
+.zdty li .cricle {
+    float: left;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    border-radius: 25px;
+    border: 2px solid rgb(209, 209, 209);
+}
+
+
+/* 正低退邮 4个 字的右侧文字内容，因为是同级元素，这里使用相邻兄弟选择器，这样减少了class的量（名字太多，实在想不起怎么起名字了） */
+.zdty li .cricle+span {
+    float: right;
+    margin-top: -18px;
+    margin-left: 14px;
+}
+
+.zdty li .cricle+span h2 {
+    height: 16px;
+}
+
+.zdty li .cricle+span p {
+    margin-top: -6px;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+/* 底部信息*/
+.bottomInfo {
+    width: 1100px;
+    height: 263px;
+}
+
+.bottomInfo ul {
+    position: relative;
+    width: 1100px;
+    margin-top: 20px;
+    margin-left: 154px;
+}
+
+.bottomInfo ul li {
+    display: block;
+    float: left;
+    margin-left: -24px;
+}
+
+.bottomInfo ul li {
+    width: 130px;
+    height: 128px;
+    top: 0px;
+}
+
+/* 底部信息，右侧的二维码定位 */
+.bottomInfo ul li:first-child .aboutImg {
+    display: block;
+    width: 210px;
+    height: 43px;
+    margin-top: 18px;
+    background-image: url('./88330630-0c6e-4653-9f0a-92e9ae5a2f42_420_130.png');
+    background-size: 210px auto;
+}
+
+/* 关于我们 */
+.bottomInfo ul li:first-child .aboutUs {
+    position: relative;
+    display: block;
+    width: 140px;
+    height: 40px;
+    margin-top: 10px;
+    z-index: 9999;
+}
+
+/* 关注我们的文字行高定位设置 */
+.bottomInfo ul li:first-child .aboutUs .subscribeUs {
+    display: block;
+    float: left;
+    line-height: 42px;
+}
+
+/* 底部信息微博icon */
+.bottomInfo .aboutUs .weibo {
+    display: block;
+    float: left;
+    width: 32px;
+    height: 32px;
+    margin-left: 12px;
+    background-size: 32px 32px;
+    margin-top: 4px;
+    background-image: url('./微博.png');
+    cursor: pointer;
+
+}
+
+/* 底部信息微信icon */
+.bottomInfo .aboutUs .weixin {
+    display: block;
+    float: left;
+    width: 32px;
+    height: 32px;
+    margin-left: 8px;
+    background-size: 32px 32px;
+    margin-top: 4px;
+    background-image: url('./微信.png');
+    cursor: pointer;
+}
+
+/* 左下角微博微信二维码提示图片 */
+.bottomInfo ul li:first-child .tipImg1 {
+    display: none;
+    width: 142px;
+    height: 142px;
+    transform: translateX(-48px) translateY(24px);
+}
+
+.bottomInfo ul li:first-child .tipImg2 {
+    display: none;
+    width: 142px;
+    height: 142px;
+    transform: translateX(-48px) translateY(24px);
+}
+
+.bottomInfo ul li:first-child .tipImg1 i ,
+.bottomInfo ul li:first-child .tipImg2 i{
+    display: block;
+    width: 0;
+    height: 0;
+    margin-left: 54px;
+    border: 10px solid transparent;
+    border-bottom: 10px solid rgb(238, 238, 238);
+}
+
+.bottomInfo ul li:first-child .tipImg1 div,
+.bottomInfo ul li:first-child .tipImg2 div {
+    width: 120px;
+    height: 120px;
+    border: 1px solid #ddd;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-image: url('./二维码图片_4月22日05时03分30秒.png');
+    background-color: #fff;
+    padding: 2px;
+}
+
+.bottomInfo .aboutUs .weibo:hover>.tipImg1 {
+    display: block;
+}
+
+.bottomInfo .aboutUs .weixin:hover>.tipImg2 {
+    display: block;
+}
+
+/* 底部信息，部分，这里因为第一个是考拉的logo，占据宽度比较大
+所以后面的间距都不太统一，从这里开始单独设置第二个元素，方面后面的信息都相对页面居中 */
+.bottomInfo ul li:nth-child(2) {
+    margin-left: 110px;
+}
+
+/* 对dl列表里的样式进行设置 */
+.bottomInfo dl a{
+    color: #000;
+    cursor: pointer;
+}
+
+/* 鼠标移动到dd上时，触发a标签响应，a标签出现下划线 */
+.bottomInfo ul li dl a:hover{
+    text-decoration: underline !important;
+}
+
+.bottomInfo ul li dt {
+    height: 29px;
+    line-height: 29px;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+.bottomInfo ul li dd {
+    height: 29px;
+    line-height: 29px;
+}
+
+
+/* 页脚部分 */
+footer {
+    color: #c2c2c2;
+    background-color: #333333;
+    text-align: center;
+}
+
+/* 页脚公安备案信息 */
+footer .gonganInfo {
+    position: relative;
+    display: block;
+    margin-top: -10px;
+    width: 100%;
+    height: 20px;
+
+    text-align: center;
+}
+
+/* 页脚公安备案图案 */
+footer .gonganInfo img {
+    width: 20px;
+    height: 20px;
+    margin-top: -58px;
+    /* 因为图方便，我这里直接采用CSS的Y轴变换来调整图像位置水平居中 */
+    transform: translateY(6px);
+}
+
+
+footer .gonganInfo span {
+    height: 28px;
+    line-height: 28px;
+}
+
+footer .countryIcon {
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+}
+
+footer img {
+    border-radius: 4px;
+    height: 30px;
+    margin-left: 16px;
+}
+
+footer .Img {
+    margin-left: -18px;
+}

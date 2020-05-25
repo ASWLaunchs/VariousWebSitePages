@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 这是引入我们将要编辑的css样式表 -->
+    <link rel="stylesheet" href="index.css">
+    <title>考拉海购网</title>
+</head>
+
+<body>
+    <!-- 顶部导航栏 -->
+    <div id="topNav">
+        <!-- nav标签用来定义导航链接的部分 -->
+        <nav>
+            <!-- 根据刚才第一步的分析可以知道这是一个水平导航栏，我们可以采用ul > li 的格式来建立一个导航栏列表 -->
+            <!-- 这里定义一个类名为Nav方便之后用CSS以类名Nav所在的标签为父级标签对导航栏进行样式操作 -->
+            <ul class="Nav">
+                <li>考拉欢迎你！</li>
+                <li><a>登录</a></li>
+                <li><a>免费注册</a></li>
+                <li><a>手机考拉</a></li>
+                <li><a>每日签到</a></li>
+                <li><a>我的订单</a></li>
+                <li><a>个人中心<i></i></a>
+                    <!-- 这里面有个类名为personalCenter的div标签，取名为该类名的原因是，该类名中文翻译为个人中心 -->
+                    <!-- 这个div标签是嵌套在li里面的，之后用于表示二级下拉菜单栏 -->
+                    <div class="personalCenter">
+                        <a href="">我的优惠券</a>
+                        <a href="">我的红包</a>
+                        <a href="">我的考拉豆</a>
+                        <a href="">帐号管理</a>
+                        <a href="">我的实名认证</a>
+                        <a href="">我的发票抬头</a>
+                        <a href="">我收藏的商品</a>
+                        <a href="">我关注的品牌</a>
+                        <a href="">售后管理</a>
+                    </div>
+                </li>
+                <li><a>客户服务<i></i></a>
+                    <!-- 这里面有个类名为customerService的div标签，取名为该类名的原因是，该类名中文翻译为客服服务 -->
+                    <!-- 这个div标签是嵌套在li里面的，之后用于表示二级下拉菜单栏 -->
+                    <div class="customerService">
+                        <a href="">联系客服</a>
+                        <a href="">帮助中心</a>
+                        <a href="">知识产权保护</a>
+                        <a href="">规则中心</a>
+                    </div>
+                </li>
+                <li><a>充值中心<i></i></a>
+                    <!-- 这里面有个类名为payCenter的div标签，取名为该类名的原因是，该类名中文翻译为支付中心 -->
+                    <!-- 这个div标签是嵌套在li里面的，之后用于表示二级下拉菜单栏 -->
+                    <div class="payCenter">
+                        <a href="">话费充值</a>
+                        <a href="">游戏充值</a>
+                        <a href="">AppStore充值卡</a>
+                    </div>
+                </li>
+                <li><a>消费者权益<i></i></a>
+                    <!-- 这里面有个类名为consumesInterests的div标签，取名为该类名的原因是，该类名中文翻译为消费者权益 -->
+                    <!-- 这个div标签是嵌套在li里面的，之后用于表示二级下拉菜单栏 -->
+                    <div class="consumesInterests">
+                        <a href="">消费者告知书</a>
+                    </div>
+                </li>
+                <li><a>更多<i></i></a>
+                    <!-- 这里面有个类名为more的div标签，取名为该类名的原因是，该类名中文翻译为更多 -->
+                    <!-- 这个div标签是嵌套在li里面的，之后用于表示二级下拉菜单栏 -->
+                    <div class="more">
+                        <a href="">收藏本站</a>
+                        <a href="">新浪微博</a>
+                        <a href="">微信公众号</a>
+                        <a href="">招商合作</a>
+                    </div>
+                </li>
+                <li><a>视频内容</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <!-- 搜索栏那一栏 -->
+        <div class="searchBar">
+            <a href=""><img src="./logo.png" alt=""></img></a>
+            <a href="" class="shopCar"><i class="shopIcon"></i> 购物车</a>
+            <div class="searchText">
+                <span class="zoomIcon"></span>
+                <input type="text" placeholder="数据库爆破工具">
+                <span class="searchButton"><i></i></span>
+            </div>
+        </div>
+
+        <!-- 分类导航栏 -->
+        <div class="classificationNav">
+            <div class="allClass">
+                <span>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+                <span>所有分类</span>
+                <ul class="vertical">
+                    <li>
+                        <img class="icon"
+                            src=" https://haitao.nos.netease.com/1cet9magj32_40_40.png?imageView&thumbnail=20x20&quality=100"
+                            alt=""><span>美容彩妆</span>
+                        <div class="context">
+                            <div class="leftContext">
+                                <ul>
+                                    <li><a href="">护肤</a></li>
+                                    <li><a href="">洁面</a></li>
+                                    <li><a href="" style="color: red;">卸妆</a></li>
+                                    <li><a href="">爽肤水</a></li>
+                                    <li><a href="" style="color: red;">眼部护理</a> </li>
+                                    <li><a href="" style="color: red;">精华</a></li>
+                                    <li><a href="">乳液</a></li>
+                                    <li><a href="" style="color: red;">凝胶</a></li>
+                                    <li><a href="">手</a></li>
+                                    <li><a href="">足护理</a></li>
+                                    <li><a href="">唇部护理</a></li>
+                                    <li><a href="">乳液</a></li>
+                                    <li><a href="">凝胶</a></li>
+                                    <li><a href="">手</a></li>
+                                    <li><a href="">足护理</a></li>
+                                    <li><a href="">唇部护理</a></li>
+                                    <li><a href="">乳液</a></li>
+                                    <li><a href="">凝胶</a></li>
+                                    <li><a href="">手</a></li>
+                                    <li><a href="">足护理</a></li>
+                                    <li><a href="">唇部护理</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="">护肤</a></li>
+                                    <li><a href="" style="color: red;">洁面</a></li>
+                                    <li><a href="">卸妆</a></li>
+                                    <li><a href="" style="color: red;">爽肤水</a></li>
+                                    <li><a href="">眼部护理</a> </li>
+                                    <li><a href="">精华</a></li>
+                                    <li><a href="">乳液</a></li>
+                                    <li><a href="">凝胶</a></li>
+                                    <li><a href="">手</a></li>
+                                    <li><a href="">足护理</a></li>
+                                    <li><a href="">唇部护理</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="">护肤</a></li>
+                                    <li><a href="">洁面</a></li>
+                                    <li><a href="" style="color: red;">卸妆</a></li>
+                                    <li><a href="">爽肤水</a></li>
+                                    <li><a href="" style="color: red;">眼部护理</a> </li>
+                                    <li><a href="">精华</a></li>
+                                    <li><a href="">乳液</a></li>
+                                    <li><a href="">凝胶</a></li>
+                                    <li><a href="">手</a></li>
+                                    <li><a href="">足护理</a></li>
+                                    <li><a href="">唇部护理</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="">护肤</a></li>
+                                    <li><a href="">洁面</a></li>
+                                    <li><a href="">卸妆</a></li>
+                                    <li><a href="">爽肤水</a></li>
+                                    <li><a href="">眼部护理</a> </li>
+                                    <li><a href="">精华</a></li>
+                                    <li><a href="">乳液</a></li>
+                                    <li><a href="">凝胶</a></li>
+                                    <li><a href="">手</a></li>
+                                    <li><a href="">足护理</a></li>
+                                    <li><a href="">唇部护理</a></li>
+                                </ul>
+                            </div>
+                            <div class="rightContext">
+                                <ul>
+                                    <li><img src="./icc1uivj43.jpg" alt=""></li>
+                                    <li><img src="./idvqc2kv42.jpg" alt=""></li>
+                                    <li><img src="./ii7faa9k34_120_120.jpg" alt=""></li>
+                                    <li><img src="./icc1uivj43.jpg" alt=""></li>
+                                    <li><img src="./icc1uivj43.jpg" alt=""></li>
+                                    <li><img src="./ii7faa9k34_120_120.jpg" alt=""></li>
+                                    <img class="ad" src="./广告.jpg" alt="">
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li> <img class="icon"
+                            src=" https://haitao.nos.netease.com/1cet9magj32_40_40.png?imageView&thumbnail=20x20&quality=100"
+                            alt=""><span>母婴儿童</span>
+                    </li>
+                    <li> <img class="icon"
+                            src=" https://haitao.nos.netease.com/1cet9magj32_40_40.png?imageView&thumbnail=20x20&quality=100"
+                            alt=""><span>营养保障</span></li>
+                    <li> <img class="icon"
+                            src=" https://haitao.nos.netease.com/1cet9magj32_40_40.png?imageView&thumbnail=20x20&quality=100"
+                            alt=""><span>数码家电</span></li>
+                    <li> <img class="icon"
+                            src=" https://haitao.nos.netease.com/1cet9magj32_40_40.png?imageView&thumbnail=20x20&quality=100"
+                            alt=""><span>个人洗护</span></li>
+                    <li> <img class="icon"
+                            src=" https://haitao.nos.netease.com/1cet9magj32_40_40.png?imageView&thumbnail=20x20&quality=100"
+                            alt=""><span>服饰鞋靴</span></li>
+                    <li> <img class="icon"
+                            src=" https://haitao.nos.netease.com/1cet9magj32_40_40.png?imageView&thumbnail=20x20&quality=100"
+                            alt=""><span>运动户外</span></li>
+                    <li> <img class="icon"
+                            src=" https://haitao.nos.netease.com/1cet9magj32_40_40.png?imageView&thumbnail=20x20&quality=100"
+                            alt=""><span>手表配饰</span></li>
+                    <li> <img class="icon"
+                            src=" https://haitao.nos.netease.com/1cet9magj32_40_40.png?imageView&thumbnail=20x20&quality=100"
+                            alt=""><span>轻奢</span></li>
+                    <li> <img class="icon"
+                            src=" https://haitao.nos.netease.com/1cet9magj32_40_40.png?imageView&thumbnail=20x20&quality=100"
+                            alt=""><span>家居生活</span></li>
+                    <li> <img class="icon"
+                            src=" https://haitao.nos.netease.com/1cet9magj32_40_40.png?imageView&thumbnail=20x20&quality=100"
+                            alt=""><span>环球美食</span></li>
+                </ul>
+            </div>
+            <ul class="horizontal">
+                <li><a style="color: red;">首页</a></li>
+                <li><a>海外直邮</a></li>
+                <li><a>工厂店</a></li>
+                <li><a>品质奶粉</a></li>
+                <li><a>人气面膜</a></li>
+                <li><a>充值</a></li>
+            </ul>
+        </div>
+
+        <!-- 轮播图 -->
+        <div class="RotationChart">
+            <!-- 背景图片实际是一个超链接的广告，所以img外面包裹一层a标签 -->
+            <a href="">
+                <img src="./cd171bbe-1828-4ff0-90a8-9bc45b9908b9T19010292039_1920_400.webp" alt="">
+                <img src="./432688c0-d4fc-436f-bb3e-f8452e29db2bT1912311645_1920_400.webp" alt="">
+                <img src="./640bc826-5ddf-43ea-9501-9d716240f6d6T19010292032_1920_400.webp" alt="">
+                <img src="./7a009d6e-ea47-415d-859a-607fc4a93db0T19010292034_1920_400.webp" alt="">
+                <img src="./b5ab8054-fd6c-437b-a646-0b7e193e4a71T19010292052_1920_400.webp" alt="">
+            </a>
+            <!-- 左右两边的按钮 -->
+            <span>
+                ></span> <span>
+                < </span> <!-- 底部的序列条，用于显示轮播图当前处于整个图片序列的哪个位置 -->
+                    <!-- 总共5个序列点，我们就用ul>li做个横向的列表，然后设置为圆角的形状就行 -->
+                    <div class="bottomList">
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+        </div>
+        <!-- 商品展示栏部分 -->
+        <div class="goodsDisplay">
+            <!-- 头号商品展示栏 -->
+            <div class="promise">
+                <div class="promiseText">
+                    <p> <span>考拉承诺</span>
+                        <span>|</span>
+                        <span>正品保障</span>
+                    </p>
+                    <img src="./5bf7a8d8-ad7b-44db-9402-e5699b22dd4e_480_22.jpg" alt="">
+                    <a href=""><span class="rightSpan">12项正品保障措施 ></span></a>
+                </div>
+            </div>
+            <div class="topTitleImg">
+                <img src="./8b9144b3-228a-4904-8239-7f821fab2df8T19010211539_1000_296.webp" alt="">
+                <div class="aHref">
+                    <a href=""><img src="" alt=""></a>
+                    <a href=""><img src="" alt=""></a>
+                    <a href=""><img src="" alt=""></a>
+                    <a href=""><img src="" alt=""></a></div>
+            </div>
+            <div class="shopTitle">★口碑爆款★</div>
+            <div class="goodsList">
+                <ul>
+                    <!-- 第一行商品展示 -->
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./8bc945f76be44060bd915535bf38ca1b1559809050771jwke1abf10206.webp" alt="">
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./29b864ef1ff045b19a3f5677b9fd7c02_800_800.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./b400fa0e49214c9fa3152bf72063ef221543987209869jpaq4bl310678.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./b400fa0e49214c9fa3152bf72063ef221543987209869jpaq4bl310678.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./8bc945f76be44060bd915535bf38ca1b1559809050771jwke1abf10206.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <!-- 第二行商品展示 -->
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./1c2597a313974e4a869a4f4c26b2f252_800_800.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./1c2597a313974e4a869a4f4c26b2f252_800_800.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./3fa1c0d570274b73be4524d7ea68f1611572438746434k2d9fhpy13074.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./8bc945f76be44060bd915535bf38ca1b1559809050771jwke1abf10206.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./3fa1c0d570274b73be4524d7ea68f1611572438746434k2d9fhpy13074.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <!-- 第三行商品展示 -->
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./8bc945f76be44060bd915535bf38ca1b1559809050771jwke1abf10206.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./8bc945f76be44060bd915535bf38ca1b1559809050771jwke1abf10206.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./8bc945f76be44060bd915535bf38ca1b1559809050771jwke1abf10206.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./3fa1c0d570274b73be4524d7ea68f1611572438746434k2d9fhpy13074.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./b400fa0e49214c9fa3152bf72063ef221543987209869jpaq4bl310678.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <!-- 第四行商品展示 -->
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./b400fa0e49214c9fa3152bf72063ef221543987209869jpaq4bl310678.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./8bc945f76be44060bd915535bf38ca1b1559809050771jwke1abf10206.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./8bc945f76be44060bd915535bf38ca1b1559809050771jwke1abf10206.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./64c0b911-1192-4f47-8c14-5591df962787.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./29b864ef1ff045b19a3f5677b9fd7c02_800_800.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <!-- 第五行商品展示 -->
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./8bc945f76be44060bd915535bf38ca1b1559809050771jwke1abf10206.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./8bc945f76be44060bd915535bf38ca1b1559809050771jwke1abf10206.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./64b13d8575b94d029bdcaf21c130b3291563521484196jy9sbma110338.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./8bc945f76be44060bd915535bf38ca1b1559809050771jwke1abf10206.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li>
+                            <div class="goods">
+                                <img src="./64b13d8575b94d029bdcaf21c130b3291563521484196jy9sbma110338.webp" alt="">
+                                <span class="leftTop">热销</span>
+                                <span class="leftBottom">新人专享</span>
+                                <h3><a>
+                                        <p>【2件装】Jmsolution 珍珠全身防水防晒隔离喷雾SPF50 180毫升</p>
+                                    </a></h3>
+                                <p class="describe">无惧夏日暴晒的秘密武器</p>
+                                <div class="value">
+                                    <span style="margin-left: 6px;">¥</span>
+                                    <span
+                                        style="font-size: 20px !important;font-weight:700;margin-left: -3px;">55</span>
+                                    <del>¥228</del>
+                                    <a href="">
+                                        立即购买</a>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+            <br>
+        </div>
+    </div>
+
+    <!-- 右侧导航栏 -->
+    <ul class="rightNav">
+        <a href="javascript:;">
+            <li style="    height: 34px;
+            line-height: 34px;"><span id="oneCar"></span><span>购物车</span></li>
+        </a>
+        <a href="javascript:;">
+            <li>★口碑爆款★</li>
+        </a>
+        <a href="javascript:;">
+            <li>99元任选2件</li>
+        </a>
+        <a href="javascript:;">
+            <li>大牌满减</li>
+        </a>
+        <a href="javascript:;">
+            <li>美容彩妆</li>
+        </a>
+        <a href="javascript:;">
+            <li>家居个护</li>
+        </a>
+        <a href="javascript:;">
+            <li>母婴儿童</li>
+        </a>
+        <a href="javascript:;">
+            <li>美食保健</li>
+        </a>
+        <a href="javascript:;">
+            <li>工厂店精选</li>
+        </a>
+        <a href="#top">
+            <li style="    height: 34px;
+            line-height: 34px;"><span id="oneUp"></span><span>TOP</span></li>
+        </a>
+    </ul>
+    <hr style="height:0.5px;border:none;background-color: #ddd;" />
+    <!-- 底部官方信息 -->
+    <div class="aboutLinks">
+        <div class="provide">
+            <ul class="zdty">
+                <li><span class="cricle">正</span><span>
+                        <h2>正品承诺</h2>
+                        <p>正品保障 假一赔十</p>
+                    </span></li>
+                <li><span class="cricle">低</span><span>
+                        <h2>低价保障</h2>
+                        <p>缩减中间环节 确保低价</p>
+                    </span></li>
+                <li><span class="cricle">退</span><span>
+                        <h2>30天无忧退货</h2>
+                        <p>国内退货 售后无忧</p>
+                    </span></li>
+                <li><span class="cricle">邮</span><span>
+                        <h2>满88包邮</h2>
+                        <p>部分特殊商品除外</p>
+                    </span></li>
+            </ul>
+        </div>
+        <div class="bottomInfo">
+            <ul>
+                <li>
+                    <div class="aboutImg" src="./88330630-0c6e-4653-9f0a-92e9ae5a2f42_420_130.png" alt=""></div>
+                    <div class="aboutUs">
+                        <span class="subscribeUs">关注我们</span>
+                        <span class="weibo">
+                            <div class="tipImg1"><i></i>
+                                <div></div>
+                            </div>
+                        </span>
+                        <span class="weixin">
+                            <div class="tipImg2"><i></i>
+                                <div></div>
+                            </div>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <dl>
+                        <dt>考拉保障</dt>
+                        <a href="#">
+                            <dd>假一赔十</dd>
+                        </a>
+                        <a href="#">
+                            <dd>廉正举报</dd>
+                        </a>
+                        <a href="#">
+                            <dd> </dd>
+                        </a>
+                        <a href="#">
+                            <dd> </dd>
+                        </a>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>新手指南</dt>
+                        <a href="#">
+                            <dd>购物流程</dd>
+                        </a>
+                        <a href="#">
+                            <dd>支付方式</dd>
+                        </a>
+                        <a href="#">
+                            <dd>通关税费</dd>
+                        </a>
+                        <a href="#">
+                            <dd>常见问题</dd>
+                        </a>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>售后服务</dt>
+                        <a href="#">
+                            <dd>售后政策</dd>
+                        </a>
+                        <a href="#">
+                            <dd>退货流程</dd>
+                        </a>
+                        <a href="#">
+                            <dd>特色服务</dd>
+                        </a>
+                        <a href="#">
+                            <dd>联系客服</dd>
+                        </a>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>物流配送</dt>
+                        <a href="#">
+                            <dd>配送方式</dd>
+                        </a>
+                        <a href="#">
+                            <dd>配送服务</dd>
+                        </a>
+                        <a href="#">
+                            <dd>运费标准</dd>
+                        </a>
+                        <a href="#">
+                            <dd>物流跟踪</dd>
+                        </a>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>商家服务</dt>
+                        <a href="#">
+                            <dd>招商合作</dd>
+                        </a>
+                        <a href="#">
+                            <dd>销售联盟</dd>
+                        </a>
+                        <a href="#">
+                            <dd>商家成长</dd>
+                        </a>
+                        <a href="#">
+                            <dd>物流跟踪</dd>
+                        </a>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>关于我们</dt>
+                        <a href="#">
+                            <dd>联系我们</dd>
+                        </a>
+                        <a href="#">
+                            <dd>CEO邮箱</dd>
+                        </a>
+                        <a href="#">
+                            <dd>线下店</dd>
+                        </a>
+                        <a href="#">
+                            <dd></dd>
+                        </a>
+                    </dl>
+                </li>
+                <li>
+                    <div style="position: relative;margin-left: 40px;">
+                        <img style="width: 108px;height: 108px;margin-top: 16px;;" src="./二维码图片_4月22日05时03分30秒.png"
+                            alt="">
+                        <span style="position:absolute;top: 130px;transform: translateX(12px);">扫描下载手机版</span>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <br>
+        <p>隐私政策 - 考拉海购</p>
+        <p>增值电信业务经营许可证：浙B2-20160288 自营经营者信息 （浙）网械平台备字[2018]第00007号</p>
+        <p class="gonganInfo"><img src="./f28aa8ee818a42bf832341f605eccefb.png" alt=""><span> 浙公网安备 33010802002216号
+                阿里巴巴版权所有©2003-2020互联网药品信息服务资格证书编号（浙）-2017-0027 浙ICP备16011229号</span></p>
+        <p class="Img"> <img src="./d720d83b55a04b6f932ea845c673c5bf.png" alt=""><img
+                src="./TB1rcIoq.Y1gK0jSZFCXXcwqXXa-65-70.png" alt=""></p>
+        <br>
+    </footer>
+    <script src="index.js"></script>
+</body>
+
+</html>
