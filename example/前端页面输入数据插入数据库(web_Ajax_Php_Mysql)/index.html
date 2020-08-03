@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+</head>
+
+<body>
+    请输入您要填的信息：<input id="txt" type="text">
+    <input id="finish" type="button" value="提交">
+    <br>
+    <span>等待处理。。。</span>
+    <script>
+        $(document).ready(function () {
+            $("#finish").click(function () {
+                txt = $("#txt").val();
+                $.post("index.php", {
+                    info: txt
+                }, function (result) {
+                    $("span").html(result);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
