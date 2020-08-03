@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多世界旅行生死单</title>
+</head>
+<style>
+    body {
+        background: linear-gradient(#3c3c3c, #fff, #3c3c3c);
+    }
+
+    form {
+        display: block;
+        width: 40%;
+        height: 550px;
+        margin: 0 auto;
+        margin-top: 45px;
+        padding: 24px;
+        background-attachment: fixed;
+        background-color: coral;
+        /* 该图片为base64转码，如需 */
+        background-image: url('./pexels-photo-1482476.jpeg');
+        background-size: auto;
+        border-radius: 0 12% 0 12%;
+        transition: 0.4s ease-in-out;
+    }
+
+    form:hover {
+        /* form表单的border边框全部变成原样 */
+        border-radius: 0 0% 0 0%;
+        /* form表单宽度变为屏幕的70% */
+        width: 70%;
+    }
+
+    form:hover  .center{
+        background-color: rgba(0, 0, 0, 0.64);
+    }
+
+    .center {
+        padding: 10px;
+        color: #fff;
+        width: 80%;
+        text-align: left;
+        background-color: rgba(60, 60, 60, 0.64);
+        transition: 0.4s ease-in-out;
+    }
+
+    .center input {
+        margin-top: 8px;
+        margin-left: 10px;
+    }
+
+    input:focus {
+        border-color: rgb(102, 207, 53);
+    }
+</style>
+
+<body>
+    <form action="###" method="post">
+        <div class="center">
+            名字:<input type="text" id="username" name="username" value="" /><br />
+            密码:<input type="password" /><br /><br />
+            性别:<input type="radio" name="male" value="man" />男 <input type="radio" name="female" value="female" />女
+            <br />
+            出身日期:<input type="datetime-local" /><br />
+            擅长:<input type="checkbox" name="observe" value="1" />观测 <input type="checkbox" name="drive" value="1" />驾驶
+            <input type="checkbox" name="safeguard" value="1" />维护 <input type="checkbox" name="search"
+                value="1" />探测<br />
+            制服颜色:<input type="color" /><br /><br />旅行前的话:<br />
+            <textarea rows="10" cols="50"></textarea><br /><input type="submit" value="提交">&nbsp;&nbsp;&nbsp;<input
+                type="reset" value="重置"></div>
+    </form>
+</body>
+
+</html>
