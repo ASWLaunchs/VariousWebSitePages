@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户注册</title>
+    <script src="../JS/jquery-3.5.1.min.js"></script>
+    <script src="../JS/regstry.js"></script>
+
+</head>
+<body>
+    <h3>用户注册</h3>
+
+    <p>
+        用户名：
+        <input type="text"  id="newUser">
+        <span id="newUserTip"></span>
+    </p>
+        姓名：
+        <input type="text" id="name" >
+        <span id="nameTip"></span>
+    <p>
+            密码：
+        <input type="password" id="pwd1" >
+        <span id="pwd1Tip"></span></p>
+    </p>
+    <p>
+           确认密码：
+        <input type="password" id="pwd2" >
+        <span id="pwd2Tip"></span></p>
+    </p>
+
+    <p>  性别：
+        <input type="radio" id="sex" name="sex" value="男">男
+        <input type="radio" id="sex" name="sex" value="女">女
+        <span id="sexTip"></span>
+    </p>
+        
+    <p>
+        年龄：
+        <input type="text" id="age" value=""></br>
+        爱好：
+        <input type="checkbox" id="favor" value="英语">英语
+        <input type="checkbox" id="favor" value="篮球">篮球
+        <input type="checkbox" id="favor" value="旅行">旅行
+        <input type="checkbox" id="favor" value="游泳">游泳
+        <span id="fvTip"></span></p>
+    </p>
+       
+       <p>
+        省份：
+        <select id="province">
+            <option value="贵州">贵州</option>
+            <option value="上海">上海</option>
+        </select>
+        <span id="sfTip"></span></p>
+    
+    </p>
+        个人简介：<br>
+        <textarea  id="brief" cols="30" rows="10"></textarea><br>
+       <p><button id="sbt">提交</button>
+        <span id="sbtTip"></span></p>
+    </p>
+        
+</body>
+</html>
