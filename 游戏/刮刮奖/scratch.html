@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>刮刮乐</title>
+    <style>
+        #Canvas {
+            background-image: url('');
+            background-size: 100% 100%;
+            /* border: 1px solid #212121; */
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="Canvas" width="350" height="350"></canvas>
+    <script>
+        var Canvas = document.getElementById('Canvas');
+        var LetsGo = Canvas.getContext('2d');
+        var w = Canvas.width;
+        var h = Canvas.height;
+        var sagX = 0;
+        var sagY = 0;
+        //主体绘制
+        function main() {
+            var img = new Image();
+            var imgRand = parseInt(Math.random() * 10);
+            if (imgRand < 2) {
+                img.src = 'getAward.jpg';
+            } else {
+                img.src = 'noAward.jpg';
+            }
+            img.onload = function () {
+                Canvas.style.backgroundImage = 'url(' + img.src + ')';
+            }
+            LetsGo.beginPath();
+            LetsGo.fillStyle = '#aaa';
+            LetsGo.fillRect(0, 0, w, h);
+            LetsGo.globalCompositeOperation = 'destination-out';
+        }
+        main();
+        //移动进入画布后触发涂改圆,以及取消涂改圆
+        Canvas.onmouseup = function () {
+            Canvas.addEventListener('mouseup', upHappen);
+        }
+        Canvas.onmousedown = function (e) {
+            sagX = e.clientX - Canvas.offsetLeft;
+            sagY = e.clientY - Canvas.offsetTop;
+            LetsGo.beginPath();
+            LetsGo.arc(sagX, sagY, 20, 0, Math.Pi * 2);
+            LetsGo.closePath();
+            LetsGo.fill();
+            Canvas.addEventListener('mousemove', moveHappen);
+            document.body.addEventListener('mouseup', upHappen);
+        }
+
+        function moveHappen(e) {
+            var x = e.clientX - Canvas.offsetLeft;
+            var y = e.clientY - Canvas.offsetTop;
+            LetsGo.beginPath();
+            LetsGo.moveTo(sagX, sagY);
+            LetsGo.lineTo(x, y);
+            LetsGo.lineWidth = 40;
+            LetsGo.lineCap = 'round';
+            LetsGo.stroke();
+            sagX = x;
+            sagY = y;
+        }
+
+        function upHappen() {
+            Canvas.removeEventListener('mousemove', moveHappen);
+            clearCover();
+            document.body.removeEventListener('mouseup', upHappen);
+
+        }
+
+        function clearCover() {
+            var imageData = LetsGo.getImageData(0, 0, w, h);
+            var sum = 0;
+            for (var i = 0; i < imageData.data.length-1; i += 4) {
+                if (imageData.data[i] == 0) {
+                    sum++;
+                }
+            }
+            if (sum > w * h * 0.67) {
+                LetsGo.clearRect(0, 0, w, h);
+            }
+        }
+    </script>
+</body>
+
+</html>
