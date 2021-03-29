@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>打地鼠</title>
+    <script>
+        alert("选择难度后开始游戏");
+    </script>
+    <style>
+        .bg {
+            width: 800px;
+            height: 600px;
+            position: relative;
+            float: left;
+            background-image: url("./bg.png");
+            background-repeat: no-repeat;
+            top: 0;
+            left: 0;
+            user-select: none;
+            cursor: pointer;
+        }
+
+        #simg0 {
+            position: absolute;
+            margin-top: 120px;
+            margin-left: 140px;
+        }
+
+        #simg1 {
+            position: absolute;
+            margin-top: 120px;
+            margin-left: 327px;
+        }
+
+        #simg2 {
+            position: absolute;
+            margin-top: 125px;
+            margin-left: 525px;
+        }
+
+        #simg3 {
+            position: absolute;
+            margin-top: 209px;
+            margin-left: 116px;
+        }
+
+        #simg4 {
+            position: absolute;
+            margin-top: 210px;
+            margin-left: 332px;
+        }
+
+        #simg5 {
+            position: absolute;
+            margin-top: 210px;
+            margin-left: 530px;
+        }
+
+        #simg6 {
+            position: absolute;
+            margin-top: 303px;
+            margin-left: 116px;
+        }
+
+        #simg7 {
+            position: absolute;
+            margin-top: 310px;
+            margin-left: 331px;
+        }
+
+        #simg8 {
+            position: absolute;
+            margin-top: 310px;
+            margin-left: 547px;
+        }
+
+        .GameInfoBar {
+            width: 300px;
+            height: 620px;
+            background-color: brown;
+            display: block;
+            float: left;
+            border-radius: 20px;
+            margin-left: -20px;
+        }
+
+        .GameInfoBar .data {
+            width: 94%;
+            height: 5%;
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+            background-color: rgb(253, 239, 239);
+            border-radius: 4px;
+            box-shadow: 4px 4px 10px 1px #4e4e4e;
+            text-align: center;
+            line-height: 30px;
+            font-size: 20px;
+            font: bold;
+        }
+
+        .GameInfoBar .level {
+            width: 94%;
+            height: 10%;
+            margin: auto;
+            margin-top: 18px;
+            background-color: antiquewhite;
+            border-radius: 8px;
+        }
+
+        .GameInfoBar .level .choose {
+            display: inline-block;
+            font-size: 0;
+            box-sizing: border-box;
+            width: 100%;
+            line-height: 60px;
+            height: 60px;
+            text-align: center;
+            margin-left: -25px;
+        }
+
+        .GameInfoBar .level .choose li {
+            width: 20%;
+            height: 30px;
+            line-height: 30px;
+            margin-top: 15px;
+            margin-left: 12px;
+            display: block;
+            float: left;
+            font-size: 18px;
+            background-color: chocolate;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .GameInfoBar .level .choose li:nth-child(1) {
+            background-color: #dddddd;
+            cursor: none
+        }
+
+        .GameInfoBar .level .choose li:hover {
+            background-color: burlywood;
+        }
+
+        .GameInfoBar .level .choose li:nth-child(1):hover {
+            background-color: #dddddd;
+        }
+
+        .GameInfoBar .taxis {
+            width: 94%;
+            height: 74%;
+            margin: auto;
+            margin-top: 14px;
+            background-color: antiquewhite;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .GameInfoBar .taxis .ttr {
+            font-size: 18px;
+            color: black;
+            margin-top: 22px;
+            text-shadow: #4e4e4e 1px 3px 3px;
+            letter-spacing: 3px;
+        }
+
+        .GameInfoBar .taxis .textbar {
+            width: 94%;
+            height: 90%;
+            margin: 10px auto 0;
+            background-color: rgb(255, 255, 255);
+            display: block;
+            border-radius: 4px;
+        }
+
+        .GameInfoBar .taxis .textbar .taxisbar {
+            display: block;
+            margin-left: -40px;
+            width: 265px;
+            height: 400px;
+        }
+
+        .GameInfoBar .taxis .textbar .taxisbar li {
+            display: block;
+            float: left;
+            width: 265px;
+            text-align: left;
+            margin-top: 20px;
+            text-indent: 20px;
+            list-style-type: none;
+            text-shadow: #4e4e4e 1px 2px 5px;
+        }
+
+        .GameInfoBar .taxis .textbar .taxisbar li .player {
+            color: crimson;
+            font-size: 18px;
+            font: bold;
+            letter-spacing: 10px;
+            text-shadow: #4e4e4e 1px 2px 3px;
+        }
+
+        .GameInfoBar .taxis .textbar .taxisbar li .score_count {
+            float: right;
+            margin-right: 40px;
+        }
+
+        .GameInfoBar .taxis .textbar .taxisbar li .player_score_count {
+            color: crimson;
+        }
+
+        .GameInfoBar .taxis .textbar .taxisbar li span {
+            color: rgb(136, 197, 255);
+            text-shadow: #4e4e4e 1px 1px 1px;
+        }
+
+        [id^=simg] {
+            overflow: hidden;
+            width: 102px;
+            height: 103px;
+            position: absolute;
+            /* border: 1px solid rgb(49, 18, 18); */
+        }
+
+        [id^=simg] img {
+            position: absolute;
+            top: 102px;
+            left: 0px;
+            /* border: 1px solid red; */
+        }
+
+        #hammer {
+            position: absolute;
+            width: 98px;
+            height: 77px;
+            /* border: 1px solid red; */
+            top: 0;
+            left: 0;
+            margin-top: -40px;
+            margin-left: -40px;
+            user-select: none;
+            cursor: none;
+            z-index: 666;
+        }
+
+        .gameinfo{
+            width: 770px;
+            height:70px;
+            display: block;
+            background-color: burlywood;
+            position: absolute;
+            margin-top: 548px;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 34px;
+            border: 2px solid chocolate;
+        }
+        #score {
+            width: 115px;
+            height: 20px;
+            display: block;
+            border: 1px solid red;
+            position: relative;
+            top: 194px;
+            left: 229px;
+            text-align: center;
+        }
+
+        #CountDown {
+            width: 115px;
+            height: 20px;
+            display: block;
+            border: 1px solid red;
+            position: relative;
+            top: 172px;
+            left: 484px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bg" id="000">
+            <span id="score">???</span>
+            <span id="CountDown">???</span>
+            <img id="hammer" src="hammer1.png" alt="">
+            <div id="simg0"><img id="00" class="img_" src="./mouse1.png" alt="地鼠图片"></div>
+            <div id="simg1"><img id="01" class="img_" src="./mouse1.png" alt="地鼠图片"></div>
+            <div id="simg2"><img id="02" class="img_" src="./mouse1.png" alt="地鼠图片"></div>
+            <div id="simg3"><img id="03" class="img_" src="./mouse1.png" alt="地鼠图片"></div>
+            <div id="simg4"><img id="04" class="img_" src="./mouse1.png" alt="地鼠图片"></div>
+            <div id="simg5"><img id="05" class="img_" src="./mouse1.png" alt="地鼠图片"></div>
+            <div id="simg6"><img id="06" class="img_" src="./mouse1.png" alt="地鼠图片"></div>
+            <div id="simg7"><img id="07" class="img_" src="./mouse1.png" alt="地鼠图片"></div>
+            <div id="simg8"><img id="08" class="img_" src="./mouse1.png" alt="地鼠图片"></div>
+        </div>
+        <div class="GameInfoBar">
+            <span class="data">猎鼠人记录</span>
+            <div class="level">
+                <ul class="choose">
+                    <li>难度:</li>
+                    <li>萌新</li>
+                    <li>大佬</li>
+                    <li>绝世</li>
+                </ul>
+            </div>
+            <div class="taxis">
+                <span class="ttr">分数排行榜</span>
+                <div class="textbar" id="textbar">
+                    <ul class="taxisbar">
+                        <li><span class="player">玩家</span><span class="score_count player_score_count">???</span></li>
+                        <li><span>隔壁老王</span>
+                            <span class="score_count">???</span>
+                        </li>
+                        <li><span>SAGASW</span>
+                            <span class="score_count">???</span>
+                        </li>
+                        <li><span>Tucao123</span>
+                            <span class="score_count">???</span>
+                        </li>
+                        <li><span>午夜杰克</span>
+                            <span class="score_count">???</span>
+                        </li>
+                        <li><span>怪屋猎人</span>
+                            <span class="score_count">???</span>
+                        </li>
+                        <li><span>九九81</span>
+                            <span class="score_count">???</span>
+                        </li>
+                        <li><span>迪迦</span>
+                            <span class="score_count">???</span>
+                        </li>
+                        <li><span>线性代数王</span>
+                            <span class="score_count">???</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gameinfo">游戏须知：只要地鼠出头，可对其进行连续敲打，每敲打一次记分为一分，游戏结束后可在排行榜查看自己和其他玩家的游戏分数，由于各位玩家的数学应该都不比我差，排名算法我就懒得写，我数学不好，希望谅解</div>
+</body>
+<script>
+    var bg = document.getElementById("000");
+    var hammer = document.getElementById("hammer");
+    var mouseID = 0;
+    var hollowAry = [];
+    var mouseAry = [];
+
+    for (var i = 0; i < 9; i++) {
+        hollowAry[i] = document.getElementById("simg" + i);
+        mouseAry[i] = hollowAry[i].getElementsByTagName("img")[0];
+    }
+    bg.onmousedown = function () {
+        hammer.src = "hammer2.png";
+    }
+    bg.onmouseup = function () {
+        hammer.src = "hammer1.png";
+    }
+    bg.onmousemove = function (e) {
+        // console.log(e.clientX + " " + e.clientY);
+        var x = e.clientX;
+        var y = e.clientY;
+        if (x < bg.offsetWidth - hammer.offsetWidth && y < bg.offsetHeight - hammer.offsetHeight) {
+            hammer.style.top = y + "px";
+            hammer.style.left = x + "px";
+        }
+    }
+    // 碰撞检测及加分扣分
+    var score = document.getElementById("score");
+    var score_num = 0;
+    bg.onclick = function (e) {
+        var x = e.clientX;
+        var y = e.clientY;
+        var x1 = mouseAry[mouseID].offsetLeft + hollowAry[mouseID].offsetLeft;
+        var x2 = x1 + mouseAry[mouseID].offsetWidth;
+        var y1 = mouseAry[mouseID].offsetTop + hollowAry[mouseID].offsetTop;
+        var y2 = hollowAry[mouseID].offsetTop + hollowAry[mouseID].offsetHeight;
+        if (x > x1 && x < x2 && y > y1 && y < y2) {
+            mouseAry[mouseID].src = "mouse2.png";
+            score_num += 1;
+            score.innerText = score_num + "分";
+        }
+    }
+    var mouseLoop = null;
+    var loopTime = 30;
+    var initTop = 102;
+    var EndTop = 102;
+    var nowTop = initTop;
+    var waitTime = 0;
+    var waitMaxTime = 1000;
+    var score_count = document.getElementsByClassName("score_count");
+    var scores = [];
+
+    function loop_play() {
+        if (mouseLoop == null) {
+            mouseID = parseInt(Math.random() * 9);
+            mouseAry[mouseID].src = "mouse1.png";
+            nowTop = initTop;
+            waitTime = 0;
+            mouseLoop = setInterval(mouseShow, loopTime);
+        }
+    }
+    var mouseLoop = setInterval(mouseShow, loopTime);
+
+    function mouseShow() {
+        if (nowTop > EndTop) {
+            nowTop -= 4;
+        }
+        if (nowTop < EndTop) {
+            nowTop = EndTop;
+        }
+        if (nowTop == EndTop) {
+            if (waitTime < waitMaxTime) {
+                waitTime += loopTime;
+            }
+            if (waitTime >= waitMaxTime) {
+                nowTop = initTop;
+                clearInterval(mouseLoop);
+                mouseLoop = null;
+            }
+        }
+        mouseAry[mouseID].style.top = nowTop + "px";
+    }
+    // 判断难度改变数值
+    var CountDown = document.getElementById("CountDown");
+    var choose = document.getElementsByClassName("choose")[0].getElementsByTagName("li");
+    var time = 60;
+    var choose_botton = 1;
+    var play = 1;
+
+    function CountDownTimer() {
+        if (time > 0) {
+            time -= 1;
+            CountDown.innerText = time + "秒";
+        } else {
+            choose_botton = 1;
+            play = 0;
+            time = 60;
+            EndTop = 102;
+            clearInterval(clear);
+            alert("游戏时间到,你的得分是：" + score_num);
+            if (opo == 1) {
+                for (var i = 1; i < score_count.length; i++) {
+                    scores[i] = parseInt(Math.random() * i * 30);
+                    score_count[0].innerHTML = score_num + '分';
+                    score_count[i].innerHTML = scores[i] + '分';
+                }
+            } else if (opo == 2) {
+                for (var i = 1; i < score_count.length; i++) {
+                    scores[i] = parseInt(Math.random() * i* 10) ;
+                    score_count[0].innerHTML = score_num + '分';
+                    score_count[i].innerHTML = scores[i] + '分';
+                }
+            } else if (opo == 3) {
+                for (var i = 1; i < score_count.length; i++) {
+                    scores[i] = parseInt(Math.random() * i);
+                    score_count[0].innerHTML = score_num + '分';
+                    score_count[i].innerHTML = scores[i] + '分';
+                }
+            }
+            score_num = 0;
+        }
+    }
+    for (var i = 1; i < choose.length; i++) {
+        choose[i].onclick = function () {
+            for (var i = 1; i < choose.length; i++) {
+                if (choose[i] === this && choose_botton == 1) {
+                    choose[i].style.backgroundColor = '#dddddd';
+                    choose[i].style.color = 'chocolate';
+                    choose[i].style.boxShadow = '2px 2px 2px 1px #cccccc';
+                    if (i == 1) {
+                        play = 1;
+                        choose_botton = 0;
+                        loopTime = 30;
+                        waitMaxTime = 1000;
+                        EndTop = 0;
+                        opo = 1;
+                        setInterval(loop_play, 1000);
+                        clear = setInterval(CountDownTimer, 1000);
+                    } else if (i == 2) {
+                        choose_botton = 0;
+                        loopTime = 10;
+                        waitMaxTime = 600;
+                        EndTop = 0;
+                        opo = 2;
+                        setInterval(loop_play, 1000);
+                        clear = setInterval(CountDownTimer, 1000);
+                    } else if (i == 3) {
+                        choose_botton = 0;
+                        loopTime = 5;
+                        waitMaxTime = 350;
+                        EndTop = 0;
+                        opo = 3;
+                        setInterval(loop_play, 1000);
+                        clear = setInterval(CountDownTimer, 1000);
+                    }
+                } else {
+                    choose[i].style.backgroundColor = 'chocolate';
+                    choose[i].style.color = '';
+                    choose[i].style.boxShadow = '';
+                }
+            }
+        }
+    }
+
+    // 排行榜
+    var textbar = document.getElementById("textbar");
+</script>
+
+</html>
